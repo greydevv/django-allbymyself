@@ -45,7 +45,7 @@ class SiteSettings(SingletonBaseModel):
 
 ### Context Processor
 
-You may also add your object as a context processor to make it available in all templates, site-wide. First, in your app, create `context_processors.py`, and add the context processor:
+You may also add your object as a context processor to make it available in all templates, site-wide. First, in your app, create `context_processors.py` and add the following:
 ```python
 from django.urls import reverse
 from your_app.models import SiteSettings
