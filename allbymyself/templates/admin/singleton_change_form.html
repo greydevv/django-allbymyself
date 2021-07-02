@@ -1,0 +1,23 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% translate 'Home' %}</a> &rsaquo;
+    {{ opts.verbose_name }}
+</div>
+{% endblock %}
+
+{% block content_subtitle %}{% endblock %}
+
+{% block object-tools-items %}
+    <li>
+        {% url opts|admin_urlname:'history' as history_url %}
+        <a href="{% add_preserved_filters history_url %}" class="historylink">{% translate "History" %}</a>
+    </li>
+    {% if has_absolute_url %}
+        <li>
+            <a href="{{ absolute_url }}" class="viewsitelink">{% translate "View on site" %}</a>
+        </li>
+    {% endif %}
+{% endblock %}
