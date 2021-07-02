@@ -2,7 +2,6 @@
 
 *`allbymyself`* provides an abstract singleton base model, `SingletonBaseModel`, along with a model admin, `SingletonBaseModelAdmin`. Singletons are classes that can only be instantiated once.
 
-
 ### Quick Start
 
 Create a model in your `models.py` and subclass `SingletonBaseModel`:
@@ -46,7 +45,7 @@ class SiteSettings(SingletonBaseModel):
 
 ### Context Processor
 
-Add your instance as a context processor to make it available in all templates. First, create `context_processors.py` in your app, and add the context processor:
+You may also add your object as a context processor to make it available in all templates, site-wide. First, in your app, create `context_processors.py`, and add the context processor:
 ```python
 from django.urls import reverse
 from your_app.models import SiteSettings
@@ -72,7 +71,7 @@ TEMPLATES = [
 ]
 ```
 
-You can then access your object in your templates, like any other piece of context:
+You can then access your object in your templates like any other piece of context:
 ```
 <h1>{{ site_settings.site_title }}</h1>
 ```
