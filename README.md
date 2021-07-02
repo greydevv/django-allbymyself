@@ -1,6 +1,6 @@
 # All By Myself
 
-*`allbymyself`* provides an abstract singleton base model along with a model admin. Singletons are classes that can only be instantiated once. 
+*`allbymyself`* provides an abstract singleton base model, `SingletonBaseModel`, along with a model admin, `SingletonBaseModelAdmin`. Singletons are classes that can only be instantiated once.
 
 
 ### Quick Start
