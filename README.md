@@ -82,3 +82,10 @@ You can then access your object in your templates like any other piece of contex
 ```html
 <h1>{{ site_settings.site_title }}</h1>
 ```
+
+### Testing
+
+Running tests in standard:
+```bash
+$ python manage.py test allbymyself
+```

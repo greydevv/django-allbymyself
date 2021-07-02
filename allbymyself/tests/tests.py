@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.core.cache import cache
 from django.test import TestCase
-from apps.allbymyself.models import SingletonBaseModel, SINGLETON_PK
-from apps.allbymyself.tests.models import SingletonTestModel, SingletonTestModelAvailable
+from allbymyself.models import SingletonBaseModel, SINGLETON_PK
+from allbymyself.tests.models import SingletonTestModel
 
 def cache_retrieve():
     cache_key = SingletonTestModel.get_cache_key()
