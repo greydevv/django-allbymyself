@@ -85,7 +85,7 @@ You can then access your object in your templates like any other piece of contex
 
 ### Testing
 
-Running tests in standard:
+Running tests is standard:
 ```bash
 $ python manage.py test allbymyself
 ```
