@@ -26,7 +26,6 @@ class SingletonBaseModelAdmin(admin.ModelAdmin):
                 return self.admin_site.admin_view(view)(*args, **kwargs)
             wrapper.model_admin = self
             return update_wrapper(wrapper, view)
-
         
         if self.model.is_default_available() and not self.model.exists():
             # get or create singleton if it should be available by default
