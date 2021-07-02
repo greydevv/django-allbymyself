@@ -2,6 +2,13 @@
 
 *`allbymyself`* provides an abstract singleton base model, `SingletonBaseModel`, along with a model admin, `SingletonBaseModelAdmin`. Singletons are classes that can only be instantiated once. A classic example of a singleton object in a web-development context is site configuration.
 
+
+### Installation
+
+```bash
+$ pip install django-allbymyself
+```
+
 ### Quick Start
 
 Create a model in your `models.py` and subclass `SingletonBaseModel`:
