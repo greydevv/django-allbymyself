@@ -40,6 +40,7 @@ class SiteSettings(SingletonBaseModel):
 
     @classmethod
     def is_default_available(cls):
+        # if True, make sure to handle default for fields in your model appropriately!
         return True
 ```
 
@@ -69,4 +70,9 @@ TEMPLATES = [
         },
     },
 ]
+```
+
+You can then access your object in your templates, like any other piece of context:
+```
+<h1>{{ site_settings.site_title }}</h1>
 ```
