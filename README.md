@@ -23,7 +23,7 @@ class SiteSettings(SingletonBaseModel):
     about = models.CharField(max_length=255)
 ```
 
-Register your model in the admin site, subclassing `SingletonBaseModelAdmin`:
+Register the model in your `admin.py`, subclassing `SingletonBaseModelAdmin`:
 ```python
 from django.contrib import admin
 from allbymyself.admin import SingletonBaseModelAdmin
