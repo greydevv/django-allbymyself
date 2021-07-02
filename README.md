@@ -79,6 +79,6 @@ TEMPLATES = [
 ```
 
 You can then access your object in your templates like any other piece of context:
-```
+```html
 <h1>{{ site_settings.site_title }}</h1>
 ```
