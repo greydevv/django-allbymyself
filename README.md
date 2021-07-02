@@ -1,6 +1,6 @@
 # All By Myself
 
-*`allbymyself`* provides an abstract singleton base model, `SingletonBaseModel`, along with a model admin, `SingletonBaseModelAdmin`. Singletons are classes that can only be instantiated once.
+*`allbymyself`* provides an abstract singleton base model, `SingletonBaseModel`, along with a model admin, `SingletonBaseModelAdmin`. Singletons are classes that can only be instantiated once. A classic example of a singleton object in a web-development context is site configuration.
 
 ### Quick Start
 
@@ -34,12 +34,12 @@ class SiteSettingsAdmin(SingletonBaseModelAdmin):
 * Override `is_default_available` and return `True` to create an instance on admin page startup:
 ```python
 class SiteSettings(SingletonBaseModel):
-    site_title = models.CharField(max_length=50)
-    about = models.CharField(max_length=255)
+    site_title = models.CharField(max_length=50, blank=True)
+    about = models.CharField(max_length=255, blank=True)
 
     @classmethod
     def is_default_available(cls):
-        # if True, make sure to handle default for fields in your model appropriately!
+        # if True, make sure to handle defaults for fields in your model appropriately!
         return True
 ```
 
