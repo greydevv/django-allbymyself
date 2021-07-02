@@ -6,8 +6,8 @@ from django.contrib import admin
 from django.urls import path, reverse
 from django.shortcuts import redirect
 from django.contrib import messages
-from apps.allbymyself.models import SINGLETON_PK
-from apps.allbymyself.path_utils import get_path_name
+from allbymyself.models import SINGLETON_PK
+from allbymyself.path_utils import get_path_name
 
 class SingletonBaseModelAdmin(admin.ModelAdmin):
     change_form_template = 'admin/singleton_change_form.html'
