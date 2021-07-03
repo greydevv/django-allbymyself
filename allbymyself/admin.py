@@ -18,6 +18,9 @@ class SingletonBaseModelAdmin(admin.ModelAdmin):
     
     def has_delete_permission(self, *args, **kwargs):
         return False
+
+    def is_default_available(self):
+        return False
     
     def get_urls(self):
         def wrap(view):
@@ -27,7 +30,7 @@ class SingletonBaseModelAdmin(admin.ModelAdmin):
             wrapper.model_admin = self
             return update_wrapper(wrapper, view)
         
-        if self.model.is_default_available() and not self.model.exists():
+        if self.is_default_available() and not self.model.exists():
             # get or create singleton if it should be available by default
             self.model.get()
 
