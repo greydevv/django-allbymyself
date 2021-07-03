@@ -1,5 +1,9 @@
 from django.apps import AppConfig
 
 class AllByMyselfConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
+    """
+    App configuration for django-allbymyself.
+
+    """
+
     name = 'allbymyself'
