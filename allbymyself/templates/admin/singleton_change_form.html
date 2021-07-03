@@ -1,5 +1,5 @@
 {% extends "admin/change_form.html" %}
-{% load i18n admin_urls %}
+{% load i18n admin_urls save_row %}
 
 {% block breadcrumbs %}
 <div class="breadcrumbs">
@@ -20,4 +20,12 @@
             <a href="{{ absolute_url }}" class="viewsitelink">{% translate "View on site" %}</a>
         </li>
     {% endif %}
+{% endblock %}
+
+{% block submit_buttons_top %}
+    {% save_row %}
+{% endblock %}
+
+{% block submit_buttons_bottom %}
+    {% save_row %}
 {% endblock %}
