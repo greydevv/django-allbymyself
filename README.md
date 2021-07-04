@@ -1,6 +1,6 @@
 # All By Myself - Django Singletons
 
-Singletons are classes that can only be instantiated once. A classic example of a singleton object in a web-development context is site configuration.\
+Singletons are classes that can only be instantiated once. A classic example of a singleton object in a web-development context is site configuration.
 This package provides an abstract singleton base model, `SingletonBaseModel`, along with a model admin, `SingletonBaseModelAdmin`. 
 
 ### Installation
