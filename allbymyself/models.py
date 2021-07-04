@@ -9,6 +9,10 @@ class SingletonBaseModel(models.Model):
     Provides an abstract model for maintaining a singleton design pattern.
     Subclass this class to create a singleton object.
 
+    Superclass
+    ----------
+    models.Model
+
     """
 
     class Meta:
@@ -41,7 +45,7 @@ class SingletonBaseModel(models.Model):
 
         Returns
         -------
-        subclass of SingletonBaseModel
+        SingletonBaseModel (subclass)
             The singleton object.
 
         """
@@ -83,15 +87,6 @@ class SingletonBaseModel(models.Model):
         suffix = cls.__name__.lower()
         return f'{prefix}:{suffix}'
 
-    # @classmethod
-    # def is_default_available(cls):
-    #     """
-    #     Determines if the model should be available by default or not.
-
-    #     """
-
-    #     return True
-
     def save(self, *args, **kwargs):
         """
         Saves the singleton object. The 'pk' field is set to 'SINGLETON_PK' to
@@ -109,10 +104,14 @@ class SingletonBaseModel(models.Model):
         Deletes the singleton object. Before deletion, the object is removed
         from the cache.
 
+        Returns
+        -------
+        django.db.models.Model.delete()
+
         """
 
         self._uncache()
-        super().delete(*args, **kwargs)
+        return super().delete(*args, **kwargs)
 
     def _cache(self):
         """
@@ -126,6 +125,11 @@ class SingletonBaseModel(models.Model):
     def _uncache(self):
         """
         Removes the object from the cache.
+
+        Returns
+        -------
+        bool
+            'True' if the deletion was successful, 'False' otherwise.
 
         """
 
