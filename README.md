@@ -11,7 +11,7 @@ $ pip install django-allbymyself
 
 ### Quick Start
 
-Create a model in your `models.py` and subclass `SingletonBaseModel`:
+Create a model in `your_app/models.py` and subclass `SingletonBaseModel`:
 ```python
 from django.db import models
 from allbymyself.models import SingletonBaseModel
@@ -21,7 +21,7 @@ class SiteSettings(SingletonBaseModel):
     about = models.CharField(max_length=255)
 ```
 
-Register the model in your `admin.py`, subclassing `SingletonBaseModelAdmin`:
+Register the model in `your_app/admin.py`, subclassing `SingletonBaseModelAdmin`:
 ```python
 from django.contrib import admin
 from allbymyself.admin import SingletonBaseModelAdmin
@@ -46,13 +46,14 @@ class SiteSettings(SingletonBaseModel):
 
     @classmethod
     def is_default_available(cls):
-        # if True, make sure to handle defaults for fields in your model appropriately!
+        # if True, make sure to handle field defaults in your model
+        # appropriately!
         return True
 ```
 
 ### Context Processor
 
-You may also add your object as a context processor to make it available in all templates, site-wide. First, in your app, create `context_processors.py` and add the following:
+You may also add your object as a context processor to make it available in all templates, site-wide. First create `your_app/context_processors.py` and add the following:
 ```python
 from django.urls import reverse
 from your_app.models import SiteSettings
@@ -81,11 +82,12 @@ TEMPLATES = [
 You can then access your object in your templates like any other piece of context:
 ```html
 <h1>{{ site_settings.site_title }}</h1>
+<p>{{ site_settings.about }}</p>
 ```
 
 ### Testing
 
-Running tests is standard:
+Simply run tests like so:
 ```bash
 $ python manage.py test allbymyself
 ```
