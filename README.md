@@ -1,7 +1,7 @@
 # All By Myself - Django Singletons
 
 Singletons are objects that can only be instantiated once and serve a very specific purpose in various programs. A classic example of where a singleton is necessary in web development is site configuration.
-This package provides an abstract singleton base model, `SingletonBaseModel`, along with a model admin, `SingletonBaseModelAdmin`. 
+This package provides an abstract singleton base model, `SingletonBaseModel`, along with a model admin, `SingletonBaseModelAdmin`, both of which are utilized to create and manage singleton objects in Django. 
 
 ### Installation
 
