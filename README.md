@@ -11,6 +11,14 @@ $ pip install django-allbymyself
 
 ### Quick Start
 
+Add to `INSTALLED_APPS` in your project's `settings.py` to load custom admin templates:
+```python
+INSTALLED_APPS = [
+    ...
+    'allbymyself',
+]
+```
+
 Create a model in `your_app/models.py` and subclass `SingletonBaseModel`:
 ```python
 from django.db import models
